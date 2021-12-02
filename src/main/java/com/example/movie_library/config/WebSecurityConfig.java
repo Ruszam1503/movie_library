@@ -53,9 +53,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().headers().frameOptions().sameOrigin();
     }
 
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
-//    }
+
+    @Override
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
+    }
 }
 

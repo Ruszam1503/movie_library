@@ -1,11 +1,13 @@
 package com.example.movie_library.model;
 
+import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 import java.util.Objects;
 
@@ -22,24 +24,35 @@ public class Movie {
     private Long id;
 
     @Column(name = "title", nullable = false)
+    @NotNull
+    @NotEmpty
     private String title;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "genre", nullable = true)
+    @JoinColumn(name = "genres_id", nullable = false)
+    @Enumerated(EnumType.STRING)
     private Genre genre;
 
     @Column(name = "rating", nullable = false)
     @Min(1)
     @Max(10)
+    @NotNull
+    @NotEmpty
     private double rating;
 
     @Column(name = "release_date", nullable = false)
+    @NotNull
+    @NotEmpty
     private Date releaseDate;
 
     @Column(name = "favorites", nullable = false)
+    @NotNull
+    @NotEmpty
     private boolean favorites;
 
     @Column(name = "viewed", nullable = false)
+    @NotNull
+    @NotEmpty
     private boolean viewed;
 
 

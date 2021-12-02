@@ -26,9 +26,9 @@ public class Genre {
         private String genre;
 
         @OneToMany(fetch = FetchType.LAZY, mappedBy = "genre", cascade = CascadeType.ALL)
-        private Set<Genre> movies = new HashSet<>();
+        private Set<Movie> movies = new HashSet<>();
 
-        public Genre(long id, String genre, Set<Genre> movies) {
+        public Genre(long id, String genre, Set<Movie> movies) {
                 this.id = id;
                 this.genre = genre;
                 this.movies = movies;

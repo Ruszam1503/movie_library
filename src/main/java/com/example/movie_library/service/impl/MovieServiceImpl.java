@@ -59,7 +59,7 @@ movieRepository.save(movie);
     }
 
     @Override
-    public List<Movie> findAllByGenreId(Long categoryId) {
-        return movieRepository.findAllByGenreId(categoryId);
+    public List<Movie> findAllByGenre(Long genreId) {
+        return movieRepository.findAllByGenre(genreId);
     }
 }

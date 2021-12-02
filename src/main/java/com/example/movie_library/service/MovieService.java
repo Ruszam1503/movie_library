@@ -25,5 +25,5 @@ public interface MovieService {
     public long getMoviesCount();
 
     //Возвращает список всех фильмов по жанру
-    public List<Movie> findAllByGenreId(Long categoryId);
+    public List<Movie> findAllByGenre(Long genreId);
 }

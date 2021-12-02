@@ -13,8 +13,8 @@ CREATE TABLE users
 CREATE TABLE movies
 (
     movie_id             BIGSERIAL PRIMARY KEY,
-    title           VARCHAR(30)  NOT NULL,
-    genre          VARCHAR(30)  NOT NULL,
+    title           VARCHAR(60)  NOT NULL,
+    genres_id          VARCHAR(60)  NOT NULL,
     rating  NUMERIC   NOT NULL,
     release_date TIMESTAMP  NOT NULL,
     favorites BOOLEAN  NOT NULL,
@@ -24,5 +24,5 @@ CREATE TABLE movies
 CREATE TABLE genres
 (
     genre_id             BIGSERIAL PRIMARY KEY,
-    genre_name           VARCHAR(30)  NOT NULL
+    genre_name           VARCHAR(60)  NOT NULL
 );
