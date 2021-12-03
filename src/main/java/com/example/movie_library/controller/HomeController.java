@@ -25,7 +25,7 @@ public class HomeController {
     public String home (Model model){
         model.addAttribute("movies", movieService.findAll());
         model.addAttribute("moviesCount", movieService.getMoviesCount());
-        model.addAttribute("genre", movieGenre.findAll());
+        model.addAttribute("genres", movieGenre.findAll());
         return "home";
     }
 
